@@ -1,1 +1,1 @@
-# react-typescript-tutorial
+# react-pizza-basic
