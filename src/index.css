@@ -9,3 +9,54 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+div {
+  color: #14274E;
+}
+
+.flex-basic-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-main {
+  cursor: pointer;
+  background: #14274E;
+  color: #fff;
+  padding: .8rem 1.5rem;
+  border-radius: 4px;
+}
+
+.btn-main:hover {
+  background: #394867;
+}
+
+.wrapper-card-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 5rem;
+}
+
+.card-items {
+  width: 30%;
+  height: 200px;
+  box-shadow: 0px 4px 20px 0px rgba(72, 119, 159, 0.18);
+  position: relative;
+}
+
+.card-image-pizza {
+  width: 200px;
+  position: absolute;
+  top: -90px;
+  left: 22.5%;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  background: #14274E;
+}

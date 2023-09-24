@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,15 +14,15 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noImplicitAny": false
   },
   "include": [
-    "src"
-  ]
+    "src",
+  ],
 }

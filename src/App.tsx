@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
+import HomePage from "./pages/HomePage";
 
 const App = () => {
 
@@ -19,13 +22,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <div>{name}</div>
-      <div>{nameList}</div>
-      <div>{nameObj.email}</div>
-      <div>{nameObj.old}</div>
-      <div>{nameObj.name}</div>
-
-      <button onClick={handleChangeName}>Change Name</button>
+      <Header />
+      <HomePage />
+      <Footer />
     </div>
   );
 }
