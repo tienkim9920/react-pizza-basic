@@ -1,21 +1,35 @@
-import LogoPizza from '../assets/pizza.png';
+import { Pizza } from "models/pizza.model";
+import { useEffect, useState } from "react";
+import CardPizza from "sections/CardPizza";
 
 const HomePage = () => {
+
+  const [pizzas, setPizzas] = useState<Pizza[]>([
+    { id: 1, title: 'Pizza Thịt Bầm', description: 'Thịt bầm, sốt cà chua' },
+    { id: 2, title: 'Pizza Phô Mai', description: 'Phô mai, muối' },
+    { id: 3, title: 'Pizza Hải Sản', description: 'Vị tôm, cua' },
+  ]);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log('Render Hook');
+    setPizzas([...pizzas, { id: 4, title: 'Pizza Test', description: 'Pizza descirption test'}]);
+  }, [count]);
+
   return (
-    <div style={{ height: 'calc(100vh - 309px)', padding: '4rem 4rem', overflowY: 'auto' }}>
-      <div className="wrapper-card-items">
-        <div className="card-items">
-          <img className='card-image-pizza' src={LogoPizza} alt="9DevPizza" />
-          <div style={{ height: '50%', width: '100%' }}></div>
-          <div className='card-content'>
-            <div>
-              <div style={{ fontSize: '20px', fontWeight: 600, color: '#fff' }}>Pizza Thịt Bầm</div>
-              <div style={{ fontSize: '15px', fontWeight: 300, color: '#fff', marginTop: '.5rem' }}>Thịt bầm, sốt cà chua</div>
-            </div>
-          </div>
+    <>
+      {console.log('Render Template')}
+      <div style={{ height: 'calc(100vh - 309px)', padding: '4rem 4rem', overflowY: 'auto' }}>
+        <div className="wrapper-card-items">
+          {
+            pizzas.map(item =>
+              <CardPizza key={item.id} id={item.id} title={item.title} description={item.description} />
+            )
+          }
         </div>
+        <button onClick={() => setCount(count + 1)}>Increase</button>
       </div>
-    </div>
+    </>
   )
 };
 

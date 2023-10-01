@@ -34,7 +34,7 @@ div {
 
 .wrapper-card-items {
   display: flex;
-  justify-content: space-between;
+  column-gap: 4rem;
   flex-wrap: wrap;
   row-gap: 5rem;
 }
@@ -44,6 +44,7 @@ div {
   height: 200px;
   box-shadow: 0px 4px 20px 0px rgba(72, 119, 159, 0.18);
   position: relative;
+  cursor: pointer;
 }
 
 .card-image-pizza {
