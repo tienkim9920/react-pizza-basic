@@ -1,5 +1,7 @@
 export type Pizza = {
   id?: number;
-  title?: string;
+  productName?: string;
+  category_id?: string;
   description?: string;
+  price?: string;
 }
