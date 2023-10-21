@@ -20,6 +20,7 @@ div {
   align-items: center;
 }
 
+/* Button */
 .btn-main {
   cursor: pointer;
   background: #14274E;
@@ -31,12 +32,14 @@ div {
 .btn-main:hover {
   background: #394867;
 }
+/* Button */
 
 .wrapper-card-items {
   display: flex;
   column-gap: 4rem;
   flex-wrap: wrap;
-  row-gap: 5rem;
+  row-gap: 8rem;
+  padding-top: 7rem;
 }
 
 .card-items {
@@ -61,3 +64,18 @@ div {
   height: 50%;
   background: #14274E;
 }
+
+/* Text field */
+.text-field {
+  padding: .8rem 1rem;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+  color: #14274E;
+  border-radius: 4px;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+}
+/* Text field */
