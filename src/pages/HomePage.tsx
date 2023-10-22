@@ -1,6 +1,7 @@
 import { Pizza } from "models/pizza.model";
 import { useEffect, useState } from "react";
 import CardPizza from "sections/CardPizza";
+import CountPizza from "sections/CountPizza";
 
 const HomePage = () => {
 
@@ -10,11 +11,7 @@ const HomePage = () => {
     { id: 3, title: 'Pizza Hải Sản', description: 'Vị tôm, cua' },
   ]);
   const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log('Render Hook');
-    setPizzas([...pizzas, { id: 4, title: 'Pizza Test', description: 'Pizza descirption test'}]);
-  }, [count]);
+  const [isCount, setIsCount] = useState(false);
 
   return (
     <>
@@ -27,7 +24,15 @@ const HomePage = () => {
             )
           }
         </div>
-        <button onClick={() => setCount(count + 1)}>Increase</button>
+        <br></br>
+
+        {/* BAI 16 */}
+        <button onClick={() => setIsCount(true)}>Open Count</button>
+        <button onClick={() => setIsCount(false)}>Close Count</button>
+        <div>{count}</div>
+        {
+          isCount && <CountPizza count={count} setCount={(count) => setCount(count)} />
+        }
       </div>
     </>
   )
