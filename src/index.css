@@ -10,6 +10,11 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 div {
   color: #14274e;
 }
@@ -25,8 +30,11 @@ div {
   cursor: pointer;
   background: #14274e;
   color: #fff;
-  padding: 0.8rem 1.5rem;
+  height: 50px;
   border-radius: 4px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .btn-main:hover {

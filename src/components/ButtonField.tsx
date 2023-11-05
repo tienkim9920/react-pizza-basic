@@ -17,7 +17,7 @@ const ButtonField = ({
       {!loading
         ? children
         : <div style={{ display: 'flex', alignItems: 'center', columnGap: '.5rem', color: '#fff'}}>
-          <IcSpinner width='32px' height='32px' />
+          <IcSpinner width='28px' height='28px' />
           {children}
         </div>
       }

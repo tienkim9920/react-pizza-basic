@@ -1,14 +1,18 @@
 import LogoPizza from 'assets/pizza.png';
 import { Pizza } from 'models/pizza.model';
+import { useNavigate } from 'react-router-dom';
 
 type Props = Pizza
 
 const CardPizza = ({
+  id,
   productName,
   description,
 }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="card-items">
+    <div className="card-items" onClick={() => navigate(`/pizza/${id}`)}>
       <img className="card-image-pizza" src={LogoPizza} alt='9DevPizza' />
       <div style={{ height: '50%', width: '100%' }}></div>
       <div className='card-content'>
