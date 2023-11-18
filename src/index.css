@@ -26,7 +26,7 @@ div {
 }
 
 /* Button */
-.btn-main {
+.btn {
   cursor: pointer;
   background: #14274e;
   color: #fff;
@@ -37,8 +37,23 @@ div {
   align-items: center;
 }
 
+.btn-main {
+  background: #14274e;
+}
+
 .btn-main:hover {
   background: #394867;
+}
+
+.btn-primary {
+  background: transparent;
+  border: 1px solid #14274e;
+  color: #14274e;
+}
+
+.btn-primary:hover {
+  background: #394867;
+  color: #fff;
 }
 /* Button */
 
@@ -46,7 +61,7 @@ div {
   display: flex;
   column-gap: 4rem;
   flex-wrap: wrap;
-  row-gap: 8rem;
+  row-gap: 6rem;
   padding-top: 7rem;
 }
 
@@ -125,3 +140,25 @@ input {
   }
 }
 /* Loading Spinner */
+
+
+/* Modal Component */
+.wrapper-modal {
+  background: rgb(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-modal .modal-body {
+  height: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+}
+/* Modal Component */

@@ -1,6 +1,7 @@
 import ButtonField from "components/ButtonField";
 import SpinnerLoad from "components/SpinnerLoad";
 import TextField from "components/TextField";
+import LoadingLayout from "layouts/LoadingLayout";
 import { Pizza } from "models/pizza.model";
 import { useEffect, useMemo, useRef, useState } from "react";
 import CardPizza from "sections/CardPizza";
@@ -40,39 +41,26 @@ const HomePage = () => {
   }, [searchText, page]);
 
   return (
-    <>
-      <div style={{ height: 'calc(100vh - 309px)', padding: '4rem 4rem', overflowY: 'auto' }}>
-        {
-          !pizzas.length && (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              <SpinnerLoad />
-            </div>
-          )
-        }
-        {
-          pizzas.length > 0 && (
-            <div>
-              <TextField placeholder="Enter Search!" width="250px" onChange={handleSearchText} />
-              <div className="wrapper-card-items">
-                {
-                  (searchText ? searchValues : pizzas || []).map((item, index) =>
-                    <CardPizza
-                      key={index}
-                      id={item.id}
-                      productName={item.productName}
-                      description={item.description}
-                    />
-                  )
-                }
-                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                  <ButtonField loading={isLoading} onClick={handleShowMore}>Show more</ButtonField>
-                </div>
-              </div>
-            </div>
-          )
-        }
+    <LoadingLayout loading={!pizzas.length}>
+      <div>
+        <TextField placeholder="Enter Search!" width="250px" onChange={handleSearchText} />
+        <div className="wrapper-card-items">
+          {
+            (searchText ? searchValues : pizzas || []).map((item, index) =>
+              <CardPizza
+                key={index}
+                id={item.id}
+                productName={item.productName}
+                description={item.description}
+              />
+            )
+          }
+          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <ButtonField loading={isLoading} onClick={handleShowMore}>Show more</ButtonField>
+          </div>
+        </div>
       </div>
-    </>
+    </LoadingLayout>
   )
 };
 

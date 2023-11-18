@@ -1,8 +1,9 @@
+import React, { Suspense } from "react";
 import MainLayout from "layouts/MainLayout";
-import CreatePizzaPage from "pages/CreatePizzaPage";
-import DetailPizzaPage from "pages/DetailPizzaPage";
 import HomePage from "pages/HomePage";
 import { Outlet, RouteObject, RouterProvider, createBrowserRouter } from "react-router-dom";
+const DetailPizzaPage = React.lazy(() => import("pages/DetailPizzaPage"));
+const CreatePizzaPage = React.lazy(() => import("pages/CreatePizzaPage"));
 
 const appRoutes: RouteObject[] = [
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
 ])
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;
