@@ -10,7 +10,7 @@ const DetailPizzaPage = () => {
   const { id } = useParams();
   const [pizza, setPizza] = useState<Pizza>({});
   const navigate = useNavigate();
-  const [isModal, setIsModal] = useState(true);
+  const [isModal, setIsModal] = useState(false);
 
   useEffect(() => {
     fetch(`http://localhost:3000/products/${id}`)
@@ -44,15 +44,15 @@ const DetailPizzaPage = () => {
             Ingredients: <span style={{ fontSize: '24px' }}>{pizza.description}</span>
           </div>
           <div style={{ display: 'flex' }}>
-            <ButtonField onClick={handleRemovePizza}>Remove Pizza</ButtonField>
+            <ButtonField onClick={() => setIsModal(true)}>Remove Pizza</ButtonField>
           </div>
         </div>
         <ModalLayout
           width='40%'
-          title='Do you want to remove this pizza?'
+          title='Do you want to remove this pizza'
           isShow={isModal}
           onClose={() => setIsModal(false)}
-          onConfirm={() => console.log('Hello')}
+          onConfirm={handleRemovePizza}
         />
       </div>
     </LoadingLayout>

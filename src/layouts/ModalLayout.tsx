@@ -6,12 +6,12 @@ type Props = {
   children?: ReactElement;
   title?: string;
   isShow?: boolean;
-  onClose: () => void;
-  onConfirm: () => void;
+  onClose?: () => void;
+  onConfirm?: () => void;
 }
 
 const ModalLayout = ({
-  width = '70%',
+  width,
   children,
   title,
   isShow,
@@ -24,11 +24,11 @@ const ModalLayout = ({
         <div className="wrapper-modal">
           <div className="modal-body" style={{ width }}>
             {!children ? (
-              <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem ' }}>
                 <div style={{ fontSize: '22px', textAlign: 'center' }}>{title}</div>
                 <div style={{ display: 'flex', columnGap: '1rem', justifyContent: 'center' }}>
                   <ButtonField onClick={onConfirm}>Confirm</ButtonField>
-                  <ButtonField color='primary' onClick={onClose}>Cancel</ButtonField>
+                  <ButtonField onClick={onClose} color="primary">Cancel</ButtonField>
                 </div>
               </div>
             ) : children}
@@ -36,7 +36,6 @@ const ModalLayout = ({
         </div>
       )}
     </>
-
   );
 };
 
