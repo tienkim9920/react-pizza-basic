@@ -5,3 +5,9 @@ export type Pizza = {
   description?: string;
   price?: string;
 }
+
+export enum FieldPizza {
+  ProductName = 'productName',
+  Description = 'description',
+  Price = 'price',
+}
