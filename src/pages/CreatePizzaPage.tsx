@@ -17,6 +17,7 @@ const CreatePizzaPage = () => {
   };
 
   const handleCreatePizza = () => {
+    if (!pizza.productName || !pizza.price || !pizza.description) return;
     fetch(`http://localhost:3000/products`, {
       method: 'POST', body: JSON.stringify(pizza), headers: {
         'Content-type': 'application/json; charset=UTF-8',
@@ -59,6 +60,7 @@ const CreatePizzaPage = () => {
           <div className="form-control" style={{ display: 'flex' }}>
             <ButtonField
               onClick={handleCreatePizza}
+              disabled={!pizza.productName || !pizza.price || !pizza.description}
             >
               Create Pizza
             </ButtonField>

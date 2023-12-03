@@ -47,6 +47,10 @@ div {
   background: #14274e;
 }
 
+.btn.disabled {
+  background: #455d8d;
+}
+
 .btn-main:hover {
   background: #394867;
 }
